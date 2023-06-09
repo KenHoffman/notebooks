@@ -40,6 +40,9 @@ def install_requirements(
 
     if is_chapter2:
         transformers_cmd = "python -m pip install transformers==4.13.0 datasets==2.8.0".split()
+        # 2023-06 Ken replaced 2.8.0 with 2.11.0 to avoid error.
+        # See https://github.com/nlp-with-transformers/notebooks/issues/107
+        transformers_cmd = "python -m pip install transformers==4.13.0 datasets==2.11.0".split()
         process_scatter = subprocess.run(
             transformers_cmd,
             stdout=subprocess.PIPE,
